@@ -27,6 +27,6 @@ public class SaveProductRequest {
     private BigDecimal price;
 
     @NotNull
-    private boolean active;
+    private Boolean active;
 
 }
