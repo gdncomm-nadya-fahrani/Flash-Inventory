@@ -9,6 +9,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,8 +23,8 @@ import java.time.Instant;
 @Table(
         name = "inventory_draft",
         uniqueConstraints = @UniqueConstraint(
-                name = "uk_inventory_draft_productSku",
-                columnNames = "productSku"
+                name = "uk_inventory_draft_product_sku",
+                columnNames = "product_sku"
         )
 )
 public class InventoryDraft {
@@ -42,6 +43,7 @@ public class InventoryDraft {
     @Column(name = "reserved_quantity", nullable = false)
     private int reservedQuantity;
 
+    @Version
     @Column(name = "version", nullable = false)
     private long version;
 

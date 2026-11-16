@@ -26,7 +26,7 @@ public class SaveProductRequest {
     @DecimalMin("0.00")
     private BigDecimal price;
 
-    @NotBlank
+    @NotNull
     private boolean active;
 
 }

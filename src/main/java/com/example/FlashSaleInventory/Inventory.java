@@ -1,5 +1,7 @@
 package com.example.FlashSaleInventory;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

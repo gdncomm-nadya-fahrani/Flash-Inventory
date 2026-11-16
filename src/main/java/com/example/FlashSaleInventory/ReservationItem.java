@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
 @Builder
@@ -15,9 +14,10 @@ import java.math.BigDecimal;
 
 public class ReservationItem {
     private Long id;
-    private Long reservationId;
-    private String productSku;
-    private int quantity;
-    private BigDecimal unitPriceAtReservation;
+    private Long customerId;
+    private ReservationStatus status;
+    private Instant expiresAt;
+    private Instant createdAt;
+    private Instant updatedAt;
 
 }
