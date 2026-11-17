@@ -1,8 +1,8 @@
-package com.example.FlashSaleInventory.Web;
+package com.example.FlashSaleInventory.web;
 
-import com.example.FlashSaleInventory.Model.Product;
+import com.example.FlashSaleInventory.model.Product;
 import com.example.FlashSaleInventory.SaveProductRequest;
-import com.example.FlashSaleInventory.Service.Model.ProductService;
+import com.example.FlashSaleInventory.service.model.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

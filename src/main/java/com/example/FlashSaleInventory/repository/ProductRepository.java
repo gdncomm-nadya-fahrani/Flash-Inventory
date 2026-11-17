@@ -1,8 +1,8 @@
-package com.example.FlashSaleInventory.Repository;
+package com.example.FlashSaleInventory.repository;
 
 import java.util.Optional;
 
-import com.example.FlashSaleInventory.Model.Product;
+import com.example.FlashSaleInventory.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {

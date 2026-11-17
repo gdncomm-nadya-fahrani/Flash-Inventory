@@ -1,10 +1,10 @@
-package com.example.FlashSaleInventory.Web;
+package com.example.FlashSaleInventory.web;
 
-import com.example.FlashSaleInventory.Model.Inventory;
-import com.example.FlashSaleInventory.Repository.InventoryRepository;
+import com.example.FlashSaleInventory.model.Inventory;
+import com.example.FlashSaleInventory.repository.InventoryRepository;
 import com.example.FlashSaleInventory.SaveInventoryRequest;
-import com.example.FlashSaleInventory.Service.Model.InventoryService;
-import com.example.FlashSaleInventory.WebModel.AvailabilityResponse;
+import com.example.FlashSaleInventory.service.model.InventoryService;
+import com.example.FlashSaleInventory.web.model.AvailabilityResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@Validated
 @RestController
 @RequestMapping("/api/inventory")
 @RequiredArgsConstructor

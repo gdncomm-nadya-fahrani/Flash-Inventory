@@ -1,7 +1,7 @@
-package com.example.FlashSaleInventory.Service.Model;
+package com.example.FlashSaleInventory.service.model;
 
-import com.example.FlashSaleInventory.Model.Product;
-import com.example.FlashSaleInventory.Repository.ProductRepository;
+import com.example.FlashSaleInventory.model.Product;
+import com.example.FlashSaleInventory.repository.ProductRepository;
 import com.example.FlashSaleInventory.SaveProductRequest;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;

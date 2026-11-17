@@ -1,4 +1,5 @@
-package com.example.FlashSaleInventory.Web;
+package com.example.FlashSaleInventory.web;
+
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String message){

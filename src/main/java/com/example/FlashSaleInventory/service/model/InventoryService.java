@@ -1,12 +1,12 @@
-package com.example.FlashSaleInventory.Service.Model;
+package com.example.FlashSaleInventory.service.model;
 
-import com.example.FlashSaleInventory.Model.Inventory;
-import com.example.FlashSaleInventory.Model.Product;
-import com.example.FlashSaleInventory.Repository.InventoryRepository;
-import com.example.FlashSaleInventory.Repository.ProductRepository;
+import com.example.FlashSaleInventory.model.Inventory;
+import com.example.FlashSaleInventory.model.Product;
+import com.example.FlashSaleInventory.repository.InventoryRepository;
+import com.example.FlashSaleInventory.repository.ProductRepository;
 import com.example.FlashSaleInventory.SaveInventoryRequest;
-import com.example.FlashSaleInventory.Web.NotFoundException;
-import com.example.FlashSaleInventory.WebModel.AvailabilityResponse;
+import com.example.FlashSaleInventory.web.NotFoundException;
+import com.example.FlashSaleInventory.web.model.AvailabilityResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
