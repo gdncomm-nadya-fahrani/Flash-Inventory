@@ -1,5 +1,8 @@
-package com.example.FlashSaleInventory;
+package com.example.FlashSaleInventory.Service.Model;
 
+import com.example.FlashSaleInventory.Model.Product;
+import com.example.FlashSaleInventory.Repository.ProductRepository;
+import com.example.FlashSaleInventory.SaveProductRequest;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,14 +16,14 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     @Transactional
-    public ProductDraft create(SaveProductRequest request) {
+    public Product create(SaveProductRequest request) {
         if (productRepository.existsBySku(request.getSku())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT, "A product with this SKU already exists"
             );
         }
 
-        ProductDraft product = new ProductDraft();
+        Product product = new Product();
         product.setSku(request.getSku());
         product.setName(request.getName());
         product.setPrice(request.getPrice());
@@ -30,7 +33,7 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public ProductDraft getBySku(String sku) {
+    public Product getBySku(String sku) {
         return productRepository.findBySku(sku)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Product not found"

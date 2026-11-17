@@ -1,4 +1,4 @@
-package com.example.FlashSaleInventory;
+package com.example.FlashSaleInventory.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

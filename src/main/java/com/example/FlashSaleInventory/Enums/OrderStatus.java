@@ -1,4 +1,4 @@
-package com.example.FlashSaleInventory;
+package com.example.FlashSaleInventory.Enums;
 
 public enum OrderStatus {
     CONFIRMED, CANCELLED

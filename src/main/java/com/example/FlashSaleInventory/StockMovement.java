@@ -1,6 +1,7 @@
 package com.example.FlashSaleInventory;
 
 
+import com.example.FlashSaleInventory.Enums.StockMovementType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

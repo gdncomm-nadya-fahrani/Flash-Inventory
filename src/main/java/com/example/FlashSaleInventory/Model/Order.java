@@ -1,5 +1,6 @@
-package com.example.FlashSaleInventory;
+package com.example.FlashSaleInventory.Model;
 
+import com.example.FlashSaleInventory.Enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

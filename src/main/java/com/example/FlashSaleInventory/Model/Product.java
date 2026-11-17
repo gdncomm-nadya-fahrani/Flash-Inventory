@@ -1,4 +1,5 @@
-package com.example.FlashSaleInventory;
+package com.example.FlashSaleInventory.Model;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,11 +10,11 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 
 @Getter
@@ -21,40 +22,42 @@ import java.time.Instant;
 @NoArgsConstructor
 @Entity
 @Table(
-        name = "inventory_draft",
+        name = "product_draft",
         uniqueConstraints = @UniqueConstraint(
-                name = "uk_inventory_draft_product_sku",
-                columnNames = "product_sku"
+                name = "uk_product_sku",
+                columnNames = "sku"
         )
 )
-public class InventoryDraft {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "product_sku", nullable = false)
-    private String productSku;
+    @Column(name = "sku", nullable = false)
+    private String sku;
 
-    @Column(name = "on_hand_quantity", nullable = false)
-    private int onHandQuantity;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "reserved_quantity", nullable = false)
-    private int reservedQuantity;
+    @Column(name = "price", nullable = false, precision = 10, scale = 2)
+    private BigDecimal price;
 
-    @Version
-    @Column(name = "version", nullable = false)
-    private long version;
+    @Column(name = "active", nullable = false)
+    private boolean active;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Instant createdAt;
 
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
-
-
     @PrePersist
     protected void onCreate() {
-        updatedAt = Instant.now();
+        Instant now = Instant.now();
+        createdAt = now;
+        updatedAt = now;
     }
 
     @PreUpdate
@@ -62,5 +65,3 @@ public class InventoryDraft {
         updatedAt = Instant.now();
     }
 }
-
-
